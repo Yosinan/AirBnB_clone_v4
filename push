@@ -3,5 +3,4 @@
 git add .
 git commit -m "AirBnB_clone_v4 - The Last Clone :)"
 git push
-
 clear
