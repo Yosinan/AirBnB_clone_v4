@@ -5,7 +5,7 @@ $('document').ready(() => {
 		amenity_name = this.getAttribute('data-name');
 		if (this.checked) {
 			amenity_filt[amenity_name] = amenity_id;
-		}else {
+		} else {
 			delete amenity_filt[amenity_name];
 		}
 		$('.amenities h4').text(Object.keys(amenities).sort().join(', '));
