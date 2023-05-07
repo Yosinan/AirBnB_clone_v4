@@ -26,7 +26,7 @@ def close_db(error):
     storage.close()
 
 
-@app.route('/4-hbnb/', strict_slashes=false)
+@app.route('/4-hbnb', strict_slashes=false)
 def hbnb(the_id=None):
     """
      HBNB is alive!
