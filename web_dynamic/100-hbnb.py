@@ -26,7 +26,7 @@ def close_db(error):
     storage.close()
 
 
-@app.route('/4-hbnb', strict_slashes=false)
+@app.route('/100-hbnb', strict_slashes=false)
 def hbnb(the_id=None):
     """
      HBNB is alive!
@@ -47,5 +47,5 @@ def hbnb(the_id=None):
 
 
 if __name__ == "__main__":
-    """main FLASK"""
+    """main fun"""
     app.run(host='0,0,0,0', port='5000')
