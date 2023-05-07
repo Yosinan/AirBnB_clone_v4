@@ -12,7 +12,7 @@ $('document').ready(() => {
     }
     $('.amenities h4').text(Object.keys(amenityFilt).sort().join(', '));
   });
-// check the status of the api
+  // check the status of the api
   $.getJSON('http://127.0.0.1:5001/api/v1/status', (data) => {
     if (data.status === 'OK') {
       $('div#api_status').addClass('available');
@@ -24,19 +24,15 @@ $('document').ready(() => {
 
   // Fetch places
   function searchPlaces () {
-  $.post({
-    url: 'http://0.0.0.0:5001/api/v1/places_search',
-    data: JSON.stringify({
-	amenities: Object.values(amenities),
-    	states: Object.values(states),
-    	cities: Object.values(cities)
-    }),
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    success: (data) => {
-      $('section.places').empty();
-      data.forEach(place => $('section.places').append(
+    $.post({
+      url: 'http://0.0.0.0:5001/api/v1/places_search',
+      data: JSON.stringify({ amenities: Object.values(amenityFilt), states: Object.values(states), cities: Object.values(cities) }),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: (data) => {
+        $('section.places').empty();
+        data.forEach(place => $('section.places').append(
       `<article>
         <div class="title_box">
           <h2>${place.name}</h2>
@@ -51,9 +47,9 @@ $('document').ready(() => {
           ${place.description}
         </div>
       </article>`
-      ));
-    },
-    dataType: 'json'
-  });
+        ));
+      },
+      dataType: 'json'
+    });
   }
 });
