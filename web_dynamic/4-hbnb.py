@@ -47,5 +47,5 @@ def hbnb(the_id=None):
 
 
 if __name__ == "__main__":
-    """main fun"""
+    """main FLASK"""
     app.run(host='0,0,0,0', port='5000')
